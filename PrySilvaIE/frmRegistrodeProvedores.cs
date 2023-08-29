@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace PrySilvaIE
 {
-    public partial class Form1 : Form
+    public partial class frmRegistrodeProvedores : Form
     {
-        public Form1()
+        public frmRegistrodeProvedores()
         {
             InitializeComponent();
-        }
-
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            frmMain fm = new frmMain();
-            fm.ShowDialog();
         }
     }
 }
