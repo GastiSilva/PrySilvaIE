@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PrySilvaIE
 {
@@ -16,11 +17,22 @@ namespace PrySilvaIE
         {
             InitializeComponent();
         }
-
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrodeProvedores rdp2 = new frmRegistrodeProvedores();
+            rdp2.ShowDialog();
+        }
+
+        private void provedoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmRegistrodeProvedores rdp = new frmRegistrodeProvedores();
             rdp.ShowDialog();
+        }
+
+        private void listadoDeProvedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoDeProvedores lp = new frmListadoDeProvedores();
+            lp.ShowDialog();
         }
     }
 }

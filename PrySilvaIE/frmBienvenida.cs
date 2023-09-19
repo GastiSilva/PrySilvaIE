@@ -33,7 +33,7 @@ namespace PrySilvaIE
             {
                 Reloj.Enabled = false;
                 this.Hide();
-                frmBienvenida window = new frmBienvenida();
+                frmMain window = new frmMain();
                 window.ShowDialog();
 
             }
