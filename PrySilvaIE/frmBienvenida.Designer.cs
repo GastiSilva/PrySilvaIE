@@ -1,6 +1,6 @@
 ﻿namespace PrySilvaIE
 {
-    partial class Form1
+    partial class frmBienvenida
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBienvenida));
             this.btnIngresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Reloj = new System.Windows.Forms.Timer(this.components);
+            this.pbBarradeCargar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,10 +42,10 @@
             this.btnIngresar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.Navy;
-            this.btnIngresar.Location = new System.Drawing.Point(197, 304);
+            this.btnIngresar.Location = new System.Drawing.Point(211, 23);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(153, 49);
+            this.btnIngresar.Size = new System.Drawing.Size(204, 60);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -51,26 +54,41 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PrySilvaIE.Properties.Resources.critobalS1;
-            this.pictureBox1.Location = new System.Drawing.Point(-7, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-9, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(534, 400);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // Reloj
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Reloj.Tick += new System.EventHandler(this.Reloj_Tick);
+            // 
+            // pbBarradeCargar
+            // 
+            this.pbBarradeCargar.Location = new System.Drawing.Point(183, 407);
+            this.pbBarradeCargar.Name = "pbBarradeCargar";
+            this.pbBarradeCargar.Size = new System.Drawing.Size(361, 32);
+            this.pbBarradeCargar.TabIndex = 1;
+            // 
+            // frmBienvenida
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(525, 400);
+            this.ClientSize = new System.Drawing.Size(700, 492);
+            this.Controls.Add(this.pbBarradeCargar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmBienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguros San Cristobal";
+            this.Load += new System.EventHandler(this.frmBienvenida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -81,6 +99,8 @@
 
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer Reloj;
+        private System.Windows.Forms.ProgressBar pbBarradeCargar;
     }
 }
 
