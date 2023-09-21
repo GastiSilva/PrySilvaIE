@@ -17,22 +17,28 @@ namespace PrySilvaIE
         {
             InitializeComponent();
         }
-        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+         {
             frmRegistrodeProvedores rdp2 = new frmRegistrodeProvedores();
             rdp2.ShowDialog();
-        }
+         }
 
-        private void provedoresToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+          private void provedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+          {
             frmRegistrodeProvedores rdp = new frmRegistrodeProvedores();
             rdp.ShowDialog();
-        }
+          } 
 
-        private void listadoDeProvedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+         private void listadoDeProvedoresToolStripMenuItem_Click(object sender, EventArgs e)
+         {
             frmListadoDeProvedores lp = new frmListadoDeProvedores();
             lp.ShowDialog();
-        }
+         }
+
+         private void registroProvedorDeSegurosToolStripMenuItem_Click(object sender, EventArgs e)
+         {
+            frmRegistrodeProvedores rdp = new frmRegistrodeProvedores();
+            rdp.ShowDialog();
+         }
     }
 }
