@@ -19,29 +19,42 @@ namespace PrySilvaIE
             InitializeComponent();
         }
 
-        string LeerLinea;
-        string[] SepararTexto;
-
-        private void ProcedimientoCargarGrilla()
+        private void CargarGrilla()
         {
-            dgvProvedores.Rows.Clear();
+            DataGridView dgvProvedores = new DataGridView();
+            dgvProvedores.Location = new Point(20, 55);
 
-            StreamReader leerArchivoGrilla = new StreamReader("baseproveedores.csv");
+            StreamReader sr = new StreamReader("Listadodeaseguradores.csv");
+            string readline;
+            string[] divlines;
 
-            while (!leerArchivoGrilla.EndOfStream)
+            bool flag = false;
+            dgvProvedores.Width = dgvProvedores.Width + 500;
+            dgvProvedores.Height = dgvProvedores.Height + 125;
+            while (!sr.EndOfStream)
             {
-                LeerLinea = leerArchivoGrilla.ReadLine();
-                SepararTexto = LeerLinea.Split(';');
-
-                dgvProvedores.Rows.Add(SepararTexto);
-
+                readline = sr.ReadLine();
+                divlines = readline.Split(';');
+                if (flag == false)
+                {
+                    for (int i = 0; i < divlines.Length; i++)
+                    {
+                        dgvProvedores.Columns.Add(divlines[i], divlines[i]);
+                    }
+                    flag = true;
+                }
+                else
+                {
+                    dgvProvedores.Rows.Add(divlines);
+                }
             }
-
-            leerArchivoGrilla.Close();
+            sr.Close();
+            Controls.Add(dgvProvedores);
         }
+
         private void btnListar_Click(object sender, EventArgs e)
         {
-
+            CargarGrilla();
         }
     }
 }

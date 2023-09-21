@@ -29,38 +29,32 @@
         private void InitializeComponent()
         {
             this.btnListar = new System.Windows.Forms.Button();
-            this.dgvProvedores = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProvedores)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(12, 12);
+            this.btnListar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnListar.Location = new System.Drawing.Point(16, 15);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(87, 23);
+            this.btnListar.Size = new System.Drawing.Size(155, 36);
             this.btnListar.TabIndex = 0;
             this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            // 
-            // dgvProvedores
-            // 
-            this.dgvProvedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProvedores.Location = new System.Drawing.Point(12, 41);
-            this.dgvProvedores.Name = "dgvProvedores";
-            this.dgvProvedores.Size = new System.Drawing.Size(700, 188);
-            this.dgvProvedores.TabIndex = 1;
             // 
             // frmListadoDeProvedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 435);
-            this.Controls.Add(this.dgvProvedores);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1055, 496);
             this.Controls.Add(this.btnListar);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListadoDeProvedores";
             this.Text = "frmListadoDeProvedores";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProvedores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +62,5 @@
         #endregion
 
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.DataGridView dgvProvedores;
     }
 }
