@@ -55,6 +55,12 @@
     <Compile Include="frmBienvenida.Designer.cs">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCarpetaDeProvedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarpetaDeProvedores.Designer.cs">
+      <DependentUpon>frmCarpetaDeProvedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoDeProvedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarpetaDeProvedores.resx">
+      <DependentUpon>frmCarpetaDeProvedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoDeProvedores.resx">
       <DependentUpon>frmListadoDeProvedores.cs</DependentUpon>

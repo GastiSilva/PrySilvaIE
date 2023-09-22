@@ -54,7 +54,7 @@
             this.Controls.Add(this.btnListar);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListadoDeProvedores";
-            this.Text = "frmListadoDeProvedores";
+            this.Text = "Listado De Provedores";
             this.ResumeLayout(false);
 
         }

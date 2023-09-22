@@ -40,5 +40,11 @@ namespace PrySilvaIE
             frmRegistrodeProvedores rdp = new frmRegistrodeProvedores();
             rdp.ShowDialog();
          }
+
+        private void carpetasDeProvedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCarpetaDeProvedores cdp = new frmCarpetaDeProvedores();
+            cdp.ShowDialog();
+        }
     }
 }
