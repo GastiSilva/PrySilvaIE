@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PrySilvaIE
 {
@@ -26,7 +27,7 @@ namespace PrySilvaIE
             DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores");
             CargarTreeView(info.FullName, info.Name);
 
-   
+
             //string rutaInicio = @"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores";
 
             // TreeNode NodoRaiz = new TreeNode(rutaInicio);
@@ -61,15 +62,15 @@ namespace PrySilvaIE
             }
         }
 
-        private void CargarTreeView(string rutaCarpetaRaiz, string NombreCarpeta)
+        private void CargarTreeView(string RutaCarpetaRaiz, string NombreCarpeta)
         {
             twCarpetasProvedores.Nodes.Clear();
 
-            if (Directory.Exists(rutaCarpetaRaiz))
+            if (Directory.Exists(RutaCarpetaRaiz))
             {
                 TreeNode NodoRaiz = new TreeNode(NombreCarpeta);
                 twCarpetasProvedores.Nodes.Add(NodoRaiz);
-                TraerCarpetasYArchivos(NodoRaiz, rutaCarpetaRaiz);
+                TraerCarpetasYArchivos(NodoRaiz, RutaCarpetaRaiz);
             }
         }
 
@@ -79,33 +80,35 @@ namespace PrySilvaIE
             try
             {
                 DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores");
+                string rutaArchivo = info.FullName + "\\" + e.Node.Text;
 
-                string rutaArchivo = info.Name + e.Node.Text;
+                StreamReader LectorArchivos = new StreamReader(rutaArchivo);
 
-                StreamReader lectorArchivos = new StreamReader(rutaArchivo);
-
-                if (lectorArchivos != null)
+                if (LectorArchivos != null)
                 {
-                    while (!lectorArchivos.EndOfStream)
+                    while (!LectorArchivos.EndOfStream)
                     {
-                        lblDatos.Text += lectorArchivos.ReadLine();
+                        lblDatos.Text += LectorArchivos.ReadLine();
                     }
                 }
-
-                lectorArchivos.Close();
+                LectorArchivos.Close();
             }
             catch (Exception)
             {
-
+                MessageBox.Show("No se encontro texto");
             }
 
         }
-
+        
         private void twCarpetasProvedores_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            // Mostrar información sobre el elemento seleccionado en el Label
-            lblDatos.Text = e.Node.FullPath;
-        }
-
+            if (File.Exists(e.Node.FullPath))
+            {
+                // Mostrar el contenido del archivo seleccionado en un Label
+                string contenido = File.ReadAllText(e.Node.FullPath);
+                lblDatos.Text = contenido;
+            }
+        } 
+        
     }
 }

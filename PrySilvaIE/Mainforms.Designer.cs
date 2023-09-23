@@ -36,10 +36,11 @@
             this.registroProvedorDeSegurosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.listadoDeProvedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.provedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.carpetasDeProvedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.provedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +101,18 @@
             this.listadoDeProvedoresToolStripMenuItem.Text = "Listado de provedores";
             this.listadoDeProvedoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeProvedoresToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(285, 6);
+            // 
+            // carpetasDeProvedoresToolStripMenuItem
+            // 
+            this.carpetasDeProvedoresToolStripMenuItem.Name = "carpetasDeProvedoresToolStripMenuItem";
+            this.carpetasDeProvedoresToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.carpetasDeProvedoresToolStripMenuItem.Text = "Carpetas de provedores";
+            this.carpetasDeProvedoresToolStripMenuItem.Click += new System.EventHandler(this.carpetasDeProvedoresToolStripMenuItem_Click);
+            // 
             // provedoresToolStripMenuItem
             // 
             this.provedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -115,23 +128,26 @@
             this.registroToolStripMenuItem.Text = "Provedores";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem3
+            // btnSalir
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(285, 6);
-            // 
-            // carpetasDeProvedoresToolStripMenuItem
-            // 
-            this.carpetasDeProvedoresToolStripMenuItem.Name = "carpetasDeProvedoresToolStripMenuItem";
-            this.carpetasDeProvedoresToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
-            this.carpetasDeProvedoresToolStripMenuItem.Text = "Carpetas de provedores";
-            this.carpetasDeProvedoresToolStripMenuItem.Click += new System.EventHandler(this.carpetasDeProvedoresToolStripMenuItem_Click);
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalir.Location = new System.Drawing.Point(815, 394);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(126, 38);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(953, 444);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -159,5 +175,6 @@
         private System.Windows.Forms.ToolStripMenuItem listadoDeProvedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem carpetasDeProvedoresToolStripMenuItem;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

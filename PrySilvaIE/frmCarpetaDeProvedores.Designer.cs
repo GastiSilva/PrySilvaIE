@@ -28,25 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCarpetas = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarpetaDeProvedores));
             this.twCarpetasProvedores = new System.Windows.Forms.TreeView();
             this.lblDatos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCarpetas
-            // 
-            this.btnCarpetas.Location = new System.Drawing.Point(153, 12);
-            this.btnCarpetas.Name = "btnCarpetas";
-            this.btnCarpetas.Size = new System.Drawing.Size(121, 32);
-            this.btnCarpetas.TabIndex = 0;
-            this.btnCarpetas.Text = "Ver carpetas";
-            this.btnCarpetas.UseVisualStyleBackColor = true;
-            // 
             // twCarpetasProvedores
             // 
-            this.twCarpetasProvedores.Location = new System.Drawing.Point(22, 60);
+            this.twCarpetasProvedores.Location = new System.Drawing.Point(12, 34);
             this.twCarpetasProvedores.Name = "twCarpetasProvedores";
-            this.twCarpetasProvedores.Size = new System.Drawing.Size(242, 215);
+            this.twCarpetasProvedores.Size = new System.Drawing.Size(299, 304);
             this.twCarpetasProvedores.TabIndex = 1;
             // 
             // lblDatos
@@ -54,21 +45,23 @@
             this.lblDatos.BackColor = System.Drawing.Color.NavajoWhite;
             this.lblDatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatos.Location = new System.Drawing.Point(306, 60);
+            this.lblDatos.Location = new System.Drawing.Point(341, 34);
             this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(262, 215);
+            this.lblDatos.Size = new System.Drawing.Size(311, 392);
             this.lblDatos.TabIndex = 2;
-            this.lblDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDatos.Text = "---";
             // 
             // frmCarpetaDeProvedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 333);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(708, 443);
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.twCarpetasProvedores);
-            this.Controls.Add(this.btnCarpetas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCarpetaDeProvedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carpetas De Provedores";
             this.Load += new System.EventHandler(this.frmCarpetaDeProvedores_Load);
             this.ResumeLayout(false);
@@ -76,8 +69,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCarpetas;
         private System.Windows.Forms.TreeView twCarpetasProvedores;
         private System.Windows.Forms.Label lblDatos;
     }
