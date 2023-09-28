@@ -49,7 +49,6 @@
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(311, 392);
             this.lblDatos.TabIndex = 2;
-            this.lblDatos.Text = "---";
             // 
             // frmCarpetaDeProvedores
             // 

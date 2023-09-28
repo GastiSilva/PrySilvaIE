@@ -23,19 +23,10 @@ namespace PrySilvaIE
 
         private void frmCarpetaDeProvedores_Load(object sender, EventArgs e)
         {
-
             DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores");
             CargarTreeView(info.FullName, info.Name);
-
-
-            //string rutaInicio = @"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores";
-
-            // TreeNode NodoRaiz = new TreeNode(rutaInicio);
-            //twCarpetasProvedores.Nodes.Add(NodoRaiz);
-
-            //TraerCarpetasYArchivos(NodoRaiz, rutaInicio);
         }
-
+        
         private void TraerCarpetasYArchivos(TreeNode NodoPadre, string ruta)
         {
             try
@@ -60,7 +51,8 @@ namespace PrySilvaIE
             {
                 MessageBox.Show("Error al cargar carpetas y archivos: " + ex.Message);
             }
-        }
+        } 
+    
 
         private void CargarTreeView(string RutaCarpetaRaiz, string NombreCarpeta)
         {
@@ -99,7 +91,8 @@ namespace PrySilvaIE
             }
 
         }
-        
+
+
         private void twCarpetasProvedores_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (File.Exists(e.Node.FullPath))
