@@ -23,7 +23,7 @@ namespace PrySilvaIE
 
         private void frmCarpetaDeProvedores_Load(object sender, EventArgs e)
         {
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\Proveedores");
+            DirectoryInfo info = new DirectoryInfo(@"..\..");
             CargarTreeView(info.FullName, info.Name);
         }
         
@@ -65,13 +65,14 @@ namespace PrySilvaIE
                 TraerCarpetasYArchivos(NodoRaiz, RutaCarpetaRaiz);
             }
         }
+        
         private void twCarpetasProvedores_DoubleClick(object sender, TreeViewEventArgs e)
         {
             lblDatos.Text = "";
             try
             {
-                DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\Proveedores");
-                string RutaArchivo = info.FullName + "\\" + e.Node.Text;
+                DirectoryInfo info = new DirectoryInfo(@"..\..");
+                string RutaArchivo = info.FullName + "\\" + e.Node.FullPath;
                 StreamReader LectorArchivos = new StreamReader(RutaArchivo);
                 if (LectorArchivos != null)
                 {
@@ -89,16 +90,26 @@ namespace PrySilvaIE
 
         }
 
-        /*
+        /* sin uso 
         private void twCarpetasProvedores_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            DirectoryInfo info = new DirectoryInfo(@"..\..");
             if (File.Exists(e.Node.FullPath))
             {
-                // Mostrar el contenido del archivo seleccionado en un Label
-                string contenido = File.ReadAllText(e.Node.FullPath);
+                string contenido = File.ReadAllText(info.FullName + "\\" +  e.Node.FullPath);
                 lblDatos.Text = contenido;
             }
-        } 
+        }
+         opcion profe
+        private void twCarpetasProvedores_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+            DirectoryInfo info = new DirectoryInfo(@"..\..");
+            if (File.Exists(info.FullName + "\\" + e.Node.FullPath))
+            {
+                string contenido = File.ReadAllText(info.FullName + "\\" + e.Node.FullPath);
+                lblDatos.Text = contenido;
+            }
+        }
         */
     }
 }
