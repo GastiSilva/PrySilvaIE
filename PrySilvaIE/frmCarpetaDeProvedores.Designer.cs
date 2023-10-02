@@ -39,6 +39,7 @@
             this.twCarpetasProvedores.Name = "twCarpetasProvedores";
             this.twCarpetasProvedores.Size = new System.Drawing.Size(299, 304);
             this.twCarpetasProvedores.TabIndex = 1;
+            this.twCarpetasProvedores.DoubleClick += new System.EventHandler(this.twCarpetasProvedores_DoubleClick);
             // 
             // lblDatos
             // 

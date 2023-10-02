@@ -23,7 +23,7 @@ namespace PrySilvaIE
 
         private void frmCarpetaDeProvedores_Load(object sender, EventArgs e)
         {
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores");
+            DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\Proveedores");
             CargarTreeView(info.FullName, info.Name);
         }
         
@@ -65,17 +65,14 @@ namespace PrySilvaIE
                 TraerCarpetasYArchivos(NodoRaiz, RutaCarpetaRaiz);
             }
         }
-
-        private void twCarpetasProvedores_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void twCarpetasProvedores_DoubleClick(object sender, TreeViewEventArgs e)
         {
             lblDatos.Text = "";
             try
             {
-                DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\PrySilvaIE\Proveedores");
-                string rutaArchivo = info.FullName + "\\" + e.Node.Text;
-
-                StreamReader LectorArchivos = new StreamReader(rutaArchivo);
-
+                DirectoryInfo info = new DirectoryInfo(@"C:\Users\gasti\source\repos\PrySilvaIE\Proveedores");
+                string RutaArchivo = info.FullName + "\\" + e.Node.Text;
+                StreamReader LectorArchivos = new StreamReader(RutaArchivo);
                 if (LectorArchivos != null)
                 {
                     while (!LectorArchivos.EndOfStream)
@@ -92,7 +89,7 @@ namespace PrySilvaIE
 
         }
 
-
+        /*
         private void twCarpetasProvedores_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (File.Exists(e.Node.FullPath))
@@ -102,6 +99,6 @@ namespace PrySilvaIE
                 lblDatos.Text = contenido;
             }
         } 
-        
+        */
     }
 }
