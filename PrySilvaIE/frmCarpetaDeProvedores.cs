@@ -20,11 +20,12 @@ namespace PrySilvaIE
         {
             InitializeComponent();
         }
-
+        // version original
         private void frmCarpetaDeProvedores_Load(object sender, EventArgs e)
         {
-            DirectoryInfo info = new DirectoryInfo(@"..\..");
-            CargarTreeView(info.FullName, info.Name);
+            DirectoryInfo info = new DirectoryInfo(@"../../");
+            string ruta = info.FullName + "Datos";
+            CargarTreeView(ruta, info.Name);
         }
         
         private void TraerCarpetasYArchivos(TreeNode NodoPadre, string ruta)
@@ -65,14 +66,14 @@ namespace PrySilvaIE
                 TraerCarpetasYArchivos(NodoRaiz, RutaCarpetaRaiz);
             }
         }
-        
-        private void twCarpetasProvedores_DoubleClick(object sender, TreeViewEventArgs e)
+
+        private void twCarpetasProvedores_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             lblDatos.Text = "";
             try
             {
-                DirectoryInfo info = new DirectoryInfo(@"..\..");
-                string RutaArchivo = info.FullName + "\\" + e.Node.FullPath;
+                DirectoryInfo info = new DirectoryInfo(@"../../");
+                string RutaArchivo = Path.Combine(info.FullName, e.Node.FullPath);
                 StreamReader LectorArchivos = new StreamReader(RutaArchivo);
                 if (LectorArchivos != null)
                 {
@@ -85,31 +86,8 @@ namespace PrySilvaIE
             }
             catch (Exception)
             {
-                MessageBox.Show("No se encontro texto");
-            }
-
-        }
-
-        /* sin uso 
-        private void twCarpetasProvedores_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            DirectoryInfo info = new DirectoryInfo(@"..\..");
-            if (File.Exists(e.Node.FullPath))
-            {
-                string contenido = File.ReadAllText(info.FullName + "\\" +  e.Node.FullPath);
-                lblDatos.Text = contenido;
+                MessageBox.Show("No se pudo encontrar texto");
             }
         }
-         opcion profe
-        private void twCarpetasProvedores_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-            DirectoryInfo info = new DirectoryInfo(@"..\..");
-            if (File.Exists(info.FullName + "\\" + e.Node.FullPath))
-            {
-                string contenido = File.ReadAllText(info.FullName + "\\" + e.Node.FullPath);
-                lblDatos.Text = contenido;
-            }
-        }
-        */
     }
 }

@@ -39,7 +39,7 @@
             this.twCarpetasProvedores.Name = "twCarpetasProvedores";
             this.twCarpetasProvedores.Size = new System.Drawing.Size(299, 304);
             this.twCarpetasProvedores.TabIndex = 1;
-            this.twCarpetasProvedores.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.twCarpetasProvedores_AfterSelect_1);
+            this.twCarpetasProvedores.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.twCarpetasProvedores_NodeMouseDoubleClick);
             // 
             // lblDatos
             // 
