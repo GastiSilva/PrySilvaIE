@@ -29,22 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoDeProvedores));
-            this.btnListar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnListar
-            // 
-            this.btnListar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListar.Location = new System.Drawing.Point(16, 15);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(155, 36);
-            this.btnListar.TabIndex = 0;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = false;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // frmListadoDeProvedores
             // 
@@ -52,18 +37,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1055, 496);
-            this.Controls.Add(this.btnListar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListadoDeProvedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado De Provedores";
+            this.Load += new System.EventHandler(this.frmListadoDeProvedores_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnListar;
     }
 }

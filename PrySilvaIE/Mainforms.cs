@@ -47,9 +47,5 @@ namespace PrySilvaIE
             cdp.ShowDialog();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

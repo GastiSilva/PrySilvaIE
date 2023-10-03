@@ -22,15 +22,15 @@ namespace PrySilvaIE
         private void CargarGrilla()
         {
             DataGridView dgvProvedores = new DataGridView();
-            dgvProvedores.Location = new Point(20, 55);
+            dgvProvedores.Location = new Point(10, 25);
 
             StreamReader sr = new StreamReader("Listadodeaseguradores.csv");
             string readline;
             string[] divlines;
 
             bool flag = false;
-            dgvProvedores.Width = dgvProvedores.Width + 500;
-            dgvProvedores.Height = dgvProvedores.Height + 125;
+            dgvProvedores.Width = dgvProvedores.Width + 525;
+            dgvProvedores.Height = dgvProvedores.Height + 195;
             while (!sr.EndOfStream)
             {
                 readline = sr.ReadLine();
@@ -52,7 +52,8 @@ namespace PrySilvaIE
             Controls.Add(dgvProvedores);
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+
+        private void frmListadoDeProvedores_Load(object sender, EventArgs e)
         {
             CargarGrilla();
         }
