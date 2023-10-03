@@ -72,8 +72,8 @@ namespace PrySilvaIE
             lblDatos.Text = "";
             try
             {
-                DirectoryInfo info = new DirectoryInfo(@"../../");
-                string RutaArchivo = Path.Combine(info.FullName, e.Node.FullPath);
+                DirectoryInfo info = new DirectoryInfo(@"../../..");
+                string RutaArchivo = info.FullName + "\\" + e.Node.FullPath;
                 StreamReader LectorArchivos = new StreamReader(RutaArchivo);
                 if (LectorArchivos != null)
                 {
