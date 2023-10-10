@@ -32,6 +32,25 @@ namespace PrySilvaIE
             estadoConexion = true;
         }
 
+        public void ValidarUsuarios(String Usuario, String Contraseña)
+        {
+            using (conexionBD = new OleDbConnection(cadenaConexion))
+            {
+                try
+                {
+                    conexionBD.Open();
+                    string consulta = "SELECT * FROM Usuarios WHERE NombreUsuario = @Usuario AND Contraseña = @Contraseña";
 
-    }
+                    using (OleDbCommand cmd = new OleDbCommand(consulta, conexionBD))
+                    {
+                        cmd.Parameters.AddWithValue("@Usuario", Usuario);
+                        cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
+                        OleDbDataReader reader = cmd.ExecuteReader();
+                    }
+                }
+
+
+            }
+
+        }
 }
