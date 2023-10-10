@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 18);
+            this.label1.Size = new System.Drawing.Size(116, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre de usuario:";
             // 
@@ -63,7 +63,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
+            this.label2.Size = new System.Drawing.Size(73, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña:";
             // 
@@ -71,19 +71,19 @@
             // 
             this.txtNombreUsuario.Location = new System.Drawing.Point(179, 12);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(192, 24);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(192, 21);
             this.txtNombreUsuario.TabIndex = 3;
             // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(179, 57);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(192, 24);
+            this.txtContraseña.Size = new System.Drawing.Size(192, 21);
             this.txtContraseña.TabIndex = 4;
             // 
             // frmInicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(428, 162);
@@ -98,6 +98,7 @@
             this.Name = "frmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesion";
+            this.Load += new System.EventHandler(this.frmInicioSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

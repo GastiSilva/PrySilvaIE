@@ -17,9 +17,16 @@ namespace PrySilvaIE
             InitializeComponent();
         }
 
+        clsBasedeDatos objAcceso = new clsBasedeDatos();
+
         private int IntentosFallidos = 0;
         private const int maxIntentosFallidos = 3;
         private bool UsuarioBloqueado = false;
+
+        private void frmInicioSesion_Load(object sender, EventArgs e)
+        {
+            objAcceso.ConectarBaseDatos();
+        }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             if (UsuarioBloqueado)
@@ -64,6 +71,7 @@ namespace PrySilvaIE
         {
             return nombreUsuario == "usuario" && contraseña == "contraseña";
         }
-           
-        }
+
+        
+    }
 }
