@@ -42,10 +42,10 @@
             this.btnIngresar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.Navy;
-            this.btnIngresar.Location = new System.Drawing.Point(186, 299);
+            this.btnIngresar.Location = new System.Drawing.Point(214, 325);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(143, 43);
+            this.btnIngresar.Size = new System.Drawing.Size(71, 27);
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -68,7 +68,7 @@
             // pbBarradeCargar
             // 
             this.pbBarradeCargar.Location = new System.Drawing.Point(102, 354);
-            this.pbBarradeCargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbBarradeCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pbBarradeCargar.Name = "pbBarradeCargar";
             this.pbBarradeCargar.Size = new System.Drawing.Size(309, 26);
             this.pbBarradeCargar.TabIndex = 1;

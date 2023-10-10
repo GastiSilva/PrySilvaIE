@@ -24,7 +24,7 @@ namespace PrySilvaIE
             DataGridView dgvProvedores = new DataGridView();
             dgvProvedores.Location = new Point(10, 25);
 
-            StreamReader sr = new StreamReader("Listadodeaseguradores.csv");
+            StreamReader sr = new StreamReader("../../Bases/Listadodeaseguradores.csv");
             string readline;
             string[] divlines;
 

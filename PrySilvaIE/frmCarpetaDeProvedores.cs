@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Reflection.Emit;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Xml.Linq;
 
 namespace PrySilvaIE
 {
@@ -23,8 +21,8 @@ namespace PrySilvaIE
         // version original
         private void frmCarpetaDeProvedores_Load(object sender, EventArgs e)
         {
-            DirectoryInfo info = new DirectoryInfo(@"../../");
-            string ruta = info.FullName + "Datos";
+            DirectoryInfo info = new DirectoryInfo(@"../..");
+            string ruta = info.FullName + "\\Proveedores";
             CargarTreeView(ruta, info.Name);
         }
         
@@ -61,7 +59,7 @@ namespace PrySilvaIE
 
             if (Directory.Exists(RutaCarpetaRaiz))
             {
-                TreeNode NodoRaiz = new TreeNode(NombreCarpeta);
+                TreeNode NodoRaiz = new TreeNode("Proveedores");
                 twCarpetasProvedores.Nodes.Add(NodoRaiz);
                 TraerCarpetasYArchivos(NodoRaiz, RutaCarpetaRaiz);
             }
@@ -72,7 +70,7 @@ namespace PrySilvaIE
             lblDatos.Text = "";
             try
             {
-                DirectoryInfo info = new DirectoryInfo(@"../../..");
+                DirectoryInfo info = new DirectoryInfo(@"../../");
                 string RutaArchivo = info.FullName + "\\" + e.Node.FullPath;
                 StreamReader LectorArchivos = new StreamReader(RutaArchivo);
                 if (LectorArchivos != null)
