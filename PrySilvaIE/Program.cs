@@ -16,7 +16,7 @@ namespace PrySilvaIE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBienvenida());
+            Application.Run(new frmInicioSesion());
         }
     }
 }

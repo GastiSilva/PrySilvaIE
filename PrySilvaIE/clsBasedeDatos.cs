@@ -8,15 +8,12 @@ using System.IO;
 
 namespace PrySilvaIE
 {
+    //original
     internal class clsBasedeDatos
     {
         OleDbConnection conexionBD;
-        OleDbCommand comandarBD;
-        OleDbDataReader BDDataReader;
         DirectoryInfo rutaProyecto = new DirectoryInfo(@"../..");
-
         string cadenaConexion;
-        public string resultadoDatos;
         public bool estadoConexion;
         public clsBasedeDatos()
         {
@@ -32,25 +29,31 @@ namespace PrySilvaIE
             estadoConexion = true;
         }
 
-        public void ValidarUsuarios(String Usuario, String Contraseña)
+        public bool ValidarUsuarios(String Usuario, String Contraseña)
         {
-            using (conexionBD = new OleDbConnection(cadenaConexion))
+            bool usuarioValido = false;
+            try
             {
-                try
-                {
-                    conexionBD.Open();
-                    string consulta = "SELECT * FROM Usuarios WHERE NombreUsuario = @Usuario AND Contraseña = @Contraseña";
+                string consulta = "SELECT * FROM Users WHERE Nombre = @Usuario AND Contraseña = @Contraseña";
 
-                    using (OleDbCommand cmd = new OleDbCommand(consulta, conexionBD))
+                using (OleDbCommand cmd = new OleDbCommand(consulta, conexionBD))
+                {
+                    cmd.Parameters.AddWithValue("@Usuario", Usuario);
+                    cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@Usuario", Usuario);
-                        cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
-                        OleDbDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            usuarioValido = true;
+                        }
                     }
                 }
-
+            }
+            catch
+            {
 
             }
-
+            return usuarioValido;
         }
+    }
 }

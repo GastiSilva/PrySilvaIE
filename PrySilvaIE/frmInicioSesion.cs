@@ -18,18 +18,35 @@ namespace PrySilvaIE
         }
 
         clsBasedeDatos objAcceso = new clsBasedeDatos();
-
-        private int IntentosFallidos = 0;
-        private const int maxIntentosFallidos = 3;
-        private bool UsuarioBloqueado = false;
-
+  
+        Int32 IntententosFallidos = 0;
+        
         private void frmInicioSesion_Load(object sender, EventArgs e)
         {
             objAcceso.ConectarBaseDatos();
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            objAcceso.ValidarUsuarios(txtNombreUsuario.Text, txtContraseña.Text);
+            if (objAcceso.ValidarUsuarios(txtNombreUsuario.Text, txtContraseña.Text) == true)
+            {
+                frmMain fm = new frmMain();
+                fm.ShowDialog();
+                frmInicioSesion fin = new frmInicioSesion();
+                fin.Close();
+                IntententosFallidos = 0;
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+                txtNombreUsuario.Text = "";
+                txtContraseña.Text = "";
+                IntententosFallidos++;
+                if(IntententosFallidos >= 3)
+                {
+                    btnIniciarSesion.Enabled = false;
+                    MessageBox.Show("Alcanzo los intentos maximos de incio de sesion");
+                }
+            }
         }
         
     }
