@@ -18,8 +18,8 @@ namespace PrySilvaIE
         public clsBasedeDatos()
         {
             estadoConexion = false;
-            cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                "Data Source=" + rutaProyecto.FullName + "\\basedeusuarios.accdb";
+            cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source="
+                + rutaProyecto.FullName + "\\basedeusuarios.accdb";
         }
 
         public void ConectarBaseDatos()
@@ -38,6 +38,8 @@ namespace PrySilvaIE
 
                 using (OleDbCommand cmd = new OleDbCommand(consulta, conexionBD))
                 {
+                    // Agrega dos parámetros a esta consulta (@Usuario y @Contraseña) utilizando el método AddWithValue. Estos parámetros se reemplazarán con los valores proporcionados
+                    // en los argumentos (Usuario y Contraseña) cuando se ejecute la consulta.
                     cmd.Parameters.AddWithValue("@Usuario", Usuario);
                     cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
                     using (OleDbDataReader reader = cmd.ExecuteReader())

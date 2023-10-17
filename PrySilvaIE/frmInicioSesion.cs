@@ -19,11 +19,12 @@ namespace PrySilvaIE
 
         clsBasedeDatos objAcceso = new clsBasedeDatos();
   
-        Int32 IntententosFallidos = 0;
+        Int32 IntentosFallidos = 0;
         
         private void frmInicioSesion_Load(object sender, EventArgs e)
         {
             objAcceso.ConectarBaseDatos();
+            txtContraseña.PasswordChar = '*';
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -33,15 +34,15 @@ namespace PrySilvaIE
                 fm.ShowDialog();
                 frmInicioSesion fin = new frmInicioSesion();
                 fin.Close();
-                IntententosFallidos = 0;
+                IntentosFallidos = 0;
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos");
                 txtNombreUsuario.Text = "";
                 txtContraseña.Text = "";
-                IntententosFallidos++;
-                if(IntententosFallidos >= 3)
+                IntentosFallidos++;
+                if(IntentosFallidos >= 3)
                 {
                     btnIniciarSesion.Enabled = false;
                     MessageBox.Show("Alcanzo los intentos maximos de incio de sesion");
