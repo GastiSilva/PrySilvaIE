@@ -49,6 +49,11 @@ namespace PrySilvaIE
                 }
             }
         }
-        
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            frmRegistrarse fr = new frmRegistrarse();
+            fr.ShowDialog();
+        }
     }
 }

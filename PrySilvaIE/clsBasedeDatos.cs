@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 
@@ -15,6 +17,10 @@ namespace PrySilvaIE
         DirectoryInfo rutaProyecto = new DirectoryInfo(@"../..");
         string cadenaConexion;
         public bool estadoConexion;
+        OleDbCommand comandoBD;
+        OleDbDataReader lectorBD;
+        OleDbDataAdapter adaptadorDS;
+        DataSet objDataSet = new DataSet();
         public clsBasedeDatos()
         {
             estadoConexion = false;
@@ -56,6 +62,38 @@ namespace PrySilvaIE
 
             }
             return usuarioValido;
+        }
+
+        public void RegistroUsuarios(String usuario, String contraseña)
+        {
+            try
+            {
+                comandoBD = new OleDbCommand();
+
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandText = "Users";
+
+                adaptadorDS = new OleDbDataAdapter(comandoBD);
+                adaptadorDS.Fill(objDataSet, "Users");
+
+                DataTable tablaGrabar = objDataSet.Tables["Users"];
+                DataRow filaGrabar = tablaGrabar.NewRow();
+
+                filaGrabar["Nombre"] = usuario;
+                filaGrabar["Contraseña"] = contraseña;
+                tablaGrabar.Rows.Add(filaGrabar);
+
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorDS);
+                adaptadorDS.Update(objDataSet, "Users");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
     }
 }

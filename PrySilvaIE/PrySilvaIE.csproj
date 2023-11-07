@@ -89,6 +89,12 @@
     <Compile Include="frmListadoDeProvedores.Designer.cs">
       <DependentUpon>frmListadoDeProvedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarse.Designer.cs">
+      <DependentUpon>frmRegistrarse.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrodeProvedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoDeProvedores.resx">
       <DependentUpon>frmListadoDeProvedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarse.resx">
+      <DependentUpon>frmRegistrarse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrodeProvedores.resx">
       <DependentUpon>frmRegistrodeProvedores.cs</DependentUpon>
