@@ -20,9 +20,16 @@ namespace PrySilvaIE
         clsBasedeDatos objAcceso = new clsBasedeDatos();
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            objAcceso.RegistroUsuarios(txtUsuario.Text, txtContraseña.Text);
-            MessageBox.Show("Usuario registrado exitosamente");
-            this.Close();
+            if(txtContraseña.Text == txtContraseña2.Text)
+            {
+                objAcceso.RegistroUsuarios(txtUsuario.Text, txtContraseña.Text);
+                MessageBox.Show("Usuario registrado exitosamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+            }
         }
 
         private void frmRegistrarse_Load(object sender, EventArgs e)

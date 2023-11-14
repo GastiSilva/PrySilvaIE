@@ -30,8 +30,8 @@ namespace PrySilvaIE
         {
             if (objAcceso.ValidarUsuarios(txtNombreUsuario.Text, txtContraseña.Text) == true)
             {
-                frmMain fm = new frmMain();
-                fm.ShowDialog();
+                frmBienvenida fb = new frmBienvenida();
+                fb.ShowDialog();
                 frmInicioSesion fin = new frmInicioSesion();
                 fin.Close();
                 IntentosFallidos = 0;
