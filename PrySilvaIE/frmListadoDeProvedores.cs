@@ -31,6 +31,9 @@ namespace PrySilvaIE
             bool flag = false;
             dgvProvedores.Width = dgvProvedores.Width + 525;
             dgvProvedores.Height = dgvProvedores.Height + 195;
+
+            dgvProvedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             while (!sr.EndOfStream)
             {
                 readline = sr.ReadLine();
